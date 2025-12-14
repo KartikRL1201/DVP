@@ -1,0 +1,357 @@
+PROGRAM -4
+4 a) Write a Python program to Demonstrate how to Draw a Bar Plot using
+Matplotlib.
+import matplotlib.pyplot as plt
+# Sample data
+categories = [&#39;Category A&#39;, &#39;Category B&#39;, &#39;Category C&#39;, &#39;Category D&#39;]
+values = [25, 50, 75, 100]
+# Create a bar plot
+plt.bar(categories, values, color=&#39;blue&#39;)
+
+# Add labels and title
+plt.xlabel(&#39;Categories&#39;)
+plt.ylabel(&#39;Values&#39;)
+plt.title(&#39;Bar Plot Example&#39;)
+
+# Show the plot
+plt.show()
+
+Output:
+
+4b) Write a Python program to Demonstrate how to Draw a Scatter Plot using
+Matplotlib.
+
+import matplotlib.pyplot as plt
+# Sample data
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+y = [10, 15, 13, 17, 20, 22, 25, 30, 28, 35]
+
+# Create a scatter plot
+plt.scatter(x, y, color=&#39;blue&#39;, marker=&#39;o&#39;, label=&#39;Scatter Points&#39;, alpha=0.6)
+
+# Add labels and title
+plt.xlabel(&#39;X-axis&#39;)
+plt.ylabel(&#39;Y-axis&#39;)
+plt.title(&#39;Scatter Plot Example&#39;)
+
+# Show the plot
+plt.legend()
+plt.grid(True)
+plt.show()
+
+Output:
+
+Program -5
+5 a) Write a Python program to Demonstrate how to Draw a Histogram Plot using
+Matplotlib.
+import matplotlib.pyplot as plt
+
+# Sample data
+data = [10, 15, 10, 20, 25, 30, 25, 30, 30, 35, 40, 45, 45, 45, 50]
+
+# Create a histogram plot
+plt.hist(data, bins=5, color=&#39;blue&#39;, edgecolor=&#39;black&#39;)
+
+# Add labels and title
+plt.xlabel(&#39;Value Bins&#39;)
+plt.ylabel(&#39;Frequency&#39;)
+plt.title(&#39;Histogram Plot Example&#39;)
+
+# Show the plot
+plt.grid(True)
+plt.show()
+
+Output:
+
+5 b) Write a Python program to Demonstrate how to Draw a Pie Chart using
+Matplotlib.
+import matplotlib.pyplot as plt
+
+# Sample data
+labels = [&#39;Category A&#39;, &#39;Category B&#39;, &#39;Category C&#39;, &#39;Category D&#39;]
+sizes = [30, 45, 15, 10]
+colors = [&#39;lightblue&#39;, &#39;lightcoral&#39;, &#39;lightgreen&#39;, &#39;lightsalmon&#39;]
+explode = (0.1, 0, 0, 0) # Explode the first slice (Category A)
+
+# Create a pie chart
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct=&#39;%1.1f%%&#39;,
+shadow=True, startangle=140)
+
+# Add a title
+plt.title(&#39;Pie Chart Example&#39;)
+
+# Show the plot
+plt.show()
+
+6 a) Write a Python program to illustrate Linear Plotting using Matplotlib.
+import matplotlib.pyplot as plt
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+# Create a linear plot
+plt.plot(x, y, marker=&#39;o&#39;, color=&#39;blue&#39;, linestyle=&#39;--&#39;)
+# Add labels and title
+plt.xlabel(&#39;X-axis&#39;)
+plt.ylabel(&#39;Y-axis&#39;)
+plt.title(&#39;Linear Plot Example&#39;)
+# Show the plot
+plt.grid(True)
+plt.show()
+Output:
+
+6 b) Write a Python program to illustrate liner plotting with line formatting
+using Matplotlib.
+import matplotlib.pyplot as plt
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+# Create a linear plot with custom line formatting
+
+Data Visualization with Python Lab Manual BCS358D
+
+Dept. of CSE, JSSATEB 2
+plt.plot(x, y, marker=&#39;o&#39;, color=&#39;blue&#39;, linestyle=&#39;--&#39;, linewidth=2, markersize=8,
+label=&#39;Line Example&#39;)
+# Add labels and title
+plt.xlabel(&#39;X-axis&#39;)
+plt.ylabel(&#39;Y-axis&#39;)
+plt.title(&#39;Linear Plot with Line Formatting&#39;)
+# Show a legend
+plt.legend()
+# Show the plot
+plt.grid(True)
+plt.show()
+Output:
+
+Questions:
+1) What is a linear plot in Matplotlib?
+2) change line width, color, and opacity?
+3) change the line color, line style, or marker in a plot?
+4) What function is typically used to create a basic line plot in Matplotlib?
+5) How do you label the x-axis and y-axis in a Matplotlib plot?
+6) How do you add a title to a plot?
+7) How do you plot multiple lines on the same graph?
+8) Etc.,
+
+Data Visualization with Python Lab Manual BCS358D
+
+Dept. of CSE, JSSATEB 3
+Program -7
+7) Write a Python program which explains uses of customizing seaborn plots
+with Aesthetic functions.
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Load a built-in dataset from Seaborn
+tips = sns.load_dataset(&quot;tips&quot;)
+# Set Seaborn style and color palette
+sns.set(style=&quot;whitegrid&quot;, palette=&quot;Set1&quot;)
+# Create a customized scatter plot
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x=&quot;total_bill&quot;, y=&quot;tip&quot;, data=tips, hue=&quot;time&quot;, style=&quot;sex&quot;, s=100,
+palette=&quot;Set2&quot;)
+plt.title(&quot;Customized Scatter Plot&quot;)
+plt.xlabel(&quot;Total Bill&quot;)
+plt.ylabel(&quot;Tip&quot;)
+plt.legend(title=&quot;Time of Day&quot;)
+plt.show()
+# Create a customized histogram
+plt.figure(figsize=(8, 6))
+sns.histplot(tips[&quot;total_bill&quot;], bins=20, kde=True, color=&quot;skyblue&quot;, line_kws={&quot;color&quot;:
+&quot;red&quot;})
+plt.title(&quot;Customized Histogram&quot;)
+plt.xlabel(&quot;Total Bill&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.grid(True)
+plt.show()
+# Create a customized box plot
+plt.figure(figsize=(8, 6))
+sns.boxplot(x=&quot;day&quot;, y=&quot;total_bill&quot;, data=tips, palette=&quot;husl&quot;)
+plt.title(&quot;Customized Box Plot&quot;)
+plt.xlabel(&quot;Day&quot;)
+plt.ylabel(&quot;Total Bill&quot;)
+plt.show()
+
+8 a) Write a Python program to explain working with bokeh line graph
+using Annotations and Legends.
+from bokeh.plotting import figure, show
+from bokeh.models import ColumnDataSource, Label, LabelSet
+from bokeh.io import output_file
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+# Create a Bokeh figure
+
+p = figure(title="Line Graph with Annotations and Legends", x_axis_label='X-
+axis', y_axis_label='Y-axis')
+
+# Create a data source
+source = ColumnDataSource(data={'x': x, 'y': y})
+# Create a line plot
+p.line('x', 'y', source=source, legend_label='Line Plot', line_color='blue',
+line_width=2)
+# Create annotations
+label = Label(x=3, y=6, x_units='data', y_units='data', text='Annotation',
+background_fill_color='lightgray', background_fill_alpha=0.7)
+p.add_layout(label)
+# Create legends
+p.legend.title = 'Legend'
+p.legend.label_text_font_size = '12pt'
+p.legend.background_fill_alpha = 0.7
+# Create a label set
+labels = LabelSet(x='x', y='y', text='y', level='glyph', source=source,
+text_baseline='middle',
+text_align='center', text_font_size='12pt')
+p.add_layout(labels)
+# Output the plot to an HTML file
+output_file('line_graph_with_annotations_and_legends.html')
+# Show the plot
+show(p)
+
+Data Visualization with Python Lab Manual BCS358D
+
+Dept. of CSE, JSSATEB 3
+Output:
+
+Questions:
+1) Add More Annotation Types
+ Add BoxAnnotation
+ Add LabelSet
+ Add HoverTool annotation
+ Highlight a region (e.g., between x=2 and x=4)
+
+2) Modify Legend
+ Move legend to bottom
+ Add interactive legend (click to hide lines)
+ Change legend background
+ Place legend outside the plot
+3) Add Multiple Lines
+4) Add More Glyphs
+ Triangles, diamonds, squares
+ Line + bar combination
+5) Change background color
+
+Data Visualization with Python Lab Manual BCS358D
+
+Dept. of CSE, JSSATEB 4
+6)Change line style (dashed, dotted)
+7) Change font styles for labels
+8) Use random data
+9) Use external CSV file
+
+8 b) Write a Python program for plotting different types of plots using
+Bokeh.
+from bokeh.plotting import figure, show, output_file
+from math import pi
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+# Create a Bokeh figure
+output_file("bokeh_plots.html")
+# Create a line plot
+p1 = figure(title="Line Plot", x_axis_label='X-axis', y_axis_label='Y-axis')
+p1.line(x, y, line_color='blue', line_width=2)
+# Create a scatter plot
+p2 = figure(title="Scatter Plot", x_axis_label='X-axis', y_axis_label='Y-axis')
+p2.circle(x, y, size=10, color='green', alpha=0.6)
+# Sample data for bar plot
+categories = ['Category A', 'Category B', 'Category C', 'Category D']
+values = [30, 45, 15, 10]
+# Create a bar plot
+p3 = figure(x_range=categories, title="Bar Plot", x_axis_label='Categories',
+y_axis_label='Values')
+p3.vbar(x=categories, top=values, width=0.5, color='orange')
+# Sample data for a pie chart
+data = {'Categories': ['Category A', 'Category B', 'Category C', 'Category D'],
+'Values': [30, 45, 15, 10]}
+angles = [pi/4, pi/2, pi, 1.5*pi]
+# Create a pie chart
+p4 = figure(title="Pie Chart")
+
+Data Visualization with Python Lab Manual BCS358D
+
+Dept. of CSE, JSSATEB 5
+p4.wedge(x=0, y=0, radius=0.4, start_angle=angles, end_angle=angles[1:] +
+[2*pi],
+line_color="white", fill_color=['red', 'green', 'blue', 'orange'],
+legend_label="Categories",
+source=data)
+# Show the plots
+show(p1)
+show(p2)
+show(p3)
+show(p4)
+Output:
+
+Data Visualization with Python Lab Manual BCS358D
+
+Dept. of CSE, JSSATEB 6
+Program -9
+9) Write a Python program to draw 3D Plots using Plotly Libraries.
+import plotly.graph_objects as go
+import numpy as np
+# Create a grid of x and y values
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+# Define a 3D function (e.g., a surface)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+# Create a 3D surface plot using Plotly
+fig = go.Figure(data=go.Surface(z=Z, x=x, y=y))
+fig.update_layout(scene=dict(zaxis_title="Z-axis", yaxis_title="Y-axis",
+xaxis_title="X-axis"),
+title="3D Surface Plot")
+# Show the plot
+fig.show()
+
+10 a) Write a Python program to draw Time Series using Plotly Libraries.
+import plotly.graph_objects as go
+import pandas as pd
+# Sample time series data
+data = {
+&#39;Date&#39;: pd.date_range(start=&#39;2023-01-01&#39;, periods=30, freq=&#39;D&#39;),
+&#39;Value&#39;: [10, 15, 12, 18, 22, 24, 30, 28, 35, 40, 45, 48, 52, 50, 60, 58, 65, 70, 75,
+80, 78, 85, 90, 95, 100, 95, 105, 110, 115, 120]
+}
+df = pd.DataFrame(data)
+# Create a time series line plot
+fig = go.Figure(data=go.Scatter(x=df[&#39;Date&#39;], y=df[&#39;Value&#39;], mode=&#39;lines+markers&#39;,
+name=&#39;Time Series&#39;))
+# Set axis labels and plot title
+fig.update_layout(xaxis_title=&#39;Date&#39;, yaxis_title=&#39;Value&#39;, title=&#39;Time Series Plot&#39;)
+# Show the plot
+fig.show()
+Output:
+
+Data Visualization with Python Lab Manual BCS358D
+
+Dept. of CSE, JSSATEB 2
+10 b) Write a Python program for creating Maps using Plotly Libraries.
+import plotly.express as px
+# Sample data
+locations = [&#39;New York&#39;, &#39;Los Angeles&#39;, &#39;Chicago&#39;, &#39;San Francisco&#39;]
+latitudes = [40.7128, 34.0522, 41.8781, 37.7749]
+longitudes = [-74.0060, -118.2437, -87.6298, -122.4194]
+# Create a map
+fig = px.scatter_geo(lat=latitudes, lon=longitudes, locationmode=&#39;USA-states&#39;,
+text=locations)
+# Customize the map
+fig.update_geos(
+projection_scale=10,
+center=dict(lon=-95, lat=38),
+visible=False,
+showcoastlines=True,
+coastlinecolor=&quot;RebeccaPurple&quot;,
+showland=True,
+landcolor=&quot;LightGreen&quot;,
+showocean=True,
+oceancolor=&quot;LightBlue&quot;,
+showlakes=True,
+lakecolor=&quot;LightBlue&quot;,
+)
+# Set map title
+fig.update_layout(
+title_text=&#39;Sample US Map&#39;,
+title_x=0.5,
+)
+# Show the map
+fig.show()
